@@ -1,0 +1,173 @@
+
+.fondo-adivinanzas {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffb7b2; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CONTENEDOR CENTRADO --- */
+.adivinanzas-container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Varela Round', 'Comic Sans MS', sans-serif;
+  text-align: center;
+  flex: 1;
+}
+
+/* El Título Grande */
+.titulo-principal {
+  color: #5d4d8a;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 50px;
+  text-shadow: 3px 3px 0px #e0e0e0;
+}
+
+/* Sección de cada categoría */
+.categoria-section {
+  margin-bottom: 60px;
+}
+
+/* Píldoras de color de categoría */
+.titulo-categoria {
+  display: inline-block;
+  font-size: 1.8rem;
+  padding: 8px 30px;
+  border-radius: 50px;
+  color: white;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- PALETA DE COLORES --- */
+.titulo-categoria.verde { background-color: #88d498; }
+.titulo-categoria.rosa { background-color: #ff8fab; }
+.titulo-categoria.amarillo { background-color: #ffd93d; color: #5c4b08; }
+.titulo-categoria.celeste { background-color: #7dd3fc; }
+.titulo-categoria.morado { background-color: #c8b6ff; }
+.titulo-categoria.naranja { background-color: #ffb7b2; }
+
+/* Grid */
+.grid-adivinanzas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* --- LA TARJETA --- */
+.tarjeta {
+  background: white;
+  border-radius: 24px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.tarjeta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.tarjeta.revelada {
+  border-color: #ffd93d; 
+}
+
+.contenido-tarjeta {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pregunta {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Zona de botones */
+.zona-accion {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botón "¿Qué soy?" */
+.btn-revelar {
+  border: none;
+  padding: 12px 25px;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-revelar:hover {
+  transform: scale(1.05);
+}
+
+/* Colores de botones */
+.btn-verde { background-color: #88d498; }
+.btn-rosa { background-color: #ff8fab; }
+.btn-amarillo { background-color: #ffd93d; color: #5c4b08; }
+.btn-celeste { background-color: #7dd3fc; }
+.btn-morado { background-color: #c8b6ff; }
+.btn-naranja { background-color: #ffb7b2; }
+
+/* Caja de Respuesta */
+.respuesta-box {
+  background-color: #ffd93d;
+  color: #333;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  animation: popUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-reset {
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+  font-size: 1.2rem;
+}
+
+.btn-reset:hover {
+  background: white;
+  transform: rotate(-180deg);
+}
+
+@keyframes popUp {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}

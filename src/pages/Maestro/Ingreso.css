@@ -1,0 +1,210 @@
+.pagina-ingreso-wrapper {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    overflow: hidden; 
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+
+.pagina-ingreso-wrapper::before {
+    content: "";
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
+    background-image: url('./imagenmascota/fondo_aula.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6; 
+    z-index: 0; 
+    filter: blur(3px); 
+}
+
+
+.contenido-ingreso-flex {
+    position: relative;
+    z-index: 10; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; 
+    max-width: 1100px;
+    width: 100%;
+}
+
+.decoracion-alumno-esquina {
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+    width: 200px; 
+    height: auto;
+    z-index: 50; 
+    filter: drop-shadow(-5px -5px 10px rgba(0,0,0,0.2));
+    pointer-events: none;
+    max-width: 30vw; 
+}
+
+.personaje-container {
+    flex: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.personaje-imagen {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px; 
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.3));
+    animation: flotar 4s ease-in-out infinite;
+}
+
+
+.contenedor-ingreso {
+    flex: 1;
+    max-width: 450px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.92); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.titulo-ingreso {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #4338ca; 
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtitulo-ingreso {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.mensaje-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.formulario-ingreso {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.etiqueta-input-bold {
+    display: block;
+    color: #111827; 
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.input-text-ingreso {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: #f3f4f6;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #1f2937;
+    transition: all 0.2s ease;
+    box-sizing: border-box; 
+}
+
+.input-text-ingreso:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.boton-ingresar-maestro {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+.boton-ingresar-maestro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+}
+
+.enlace-a-registro {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #6b7280;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.enlace-registro-texto {
+    color: #4f46e5;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 0.4rem;
+}
+
+.enlace-registro-texto:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .contenido-ingreso-flex {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .personaje-container {
+        width: 100%;
+        margin-bottom: -40px; 
+        z-index: 20; 
+    }
+
+    .personaje-imagen {
+        max-height: 250px;
+    }
+
+    .contenedor-ingreso {
+        padding: 2rem 1.5rem;
+    }
+
+
+    .decoracion-alumno-esquina {
+        width: 120px;
+        right: -10px;
+        opacity: 0.9;
+    }
+}

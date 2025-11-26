@@ -1,0 +1,198 @@
+/* --- Estilos Generales --- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Contenedor Principal --- */
+.header-container {
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  position: relative;
+  z-index: 100;
+}
+
+/* --- 1. Barra Superior --- */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- LOGO --- */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #8BC34A;
+  line-height: 1;
+}
+
+.logo .logo-prin {
+  color: #448AFF;
+}
+
+/* --- Acciones y Botones --- */
+.header-acciones {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-subscribe {
+  background-color: #9C27B0;
+}
+
+.btn-login {
+  background-color: #3F51B5;
+}
+
+/* --- 2. Barras de Navegación --- */
+.navegacion {
+  background-color: #64c0eb;
+  padding: 10px 30px;
+  border-top: 1px solid #B3E5FC;
+  border-bottom: 1px solid #B3E5FC;
+}
+
+.lista-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lista-nav li a {
+  font-weight: bold;
+  color: #043a5b;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  padding: 5px 0;
+  display: block;
+}
+
+.lista-nav li a:hover {
+  color: #ffffff;
+}
+
+/* --- Estilos extra (materias) --- */
+.nav-materias {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 40px;
+  margin-top: 20px;
+}
+
+.nav-materias li a {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.nav-materias li a:hover {
+  color: #01579B;
+}
+
+/* =========================================
+    📱 ESTILOS RESPONSIVOS (MÓVIL)
+    ========================================= */
+@media (max-width: 768px) {
+
+  .header-top {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  /* Ajuste del Logo para móvil */
+  .logo-link {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-img {
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  /* Botones anchos */
+  .header-acciones {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 0;
+  }
+
+  /* Menú */
+  .navegacion {
+    padding: 15px 10px;
+  }
+
+  .lista-nav {
+    gap: 10px 20px;
+    justify-content: center;
+  }
+}

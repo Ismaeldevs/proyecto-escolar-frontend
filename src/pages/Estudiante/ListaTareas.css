@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+/* --- 1. CONTENEDOR PRINCIPAL Y FONDO --- */
+.contenedor-lista-tareas {
+    font-family: 'Nunito', sans-serif;
+    padding: 30px 15px;
+    max-width: 650px; 
+    margin: 0 auto;
+    text-align: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: #f4f6f9;
+}
+
+/* --- 2. ENCABEZADO DEL ALUMNO (Perfil) --- */
+.encabezado-alumno {
+    background: white;
+    padding: 30px;
+    border-radius: 20px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 35px;
+    border: 3px solid #e0e7ff; 
+}
+
+.avatar-grande { 
+    font-size: 4rem; 
+    display: block; 
+    margin-bottom: 10px; 
+    transition: transform 0.3s;
+}
+.encabezado-alumno:hover .avatar-grande {
+    transform: scale(1.1); 
+}
+
+.encabezado-alumno h1 { 
+    margin: 0; 
+    color: #4f46e5; 
+    font-size: 2rem; 
+    font-weight: 900; 
+    text-shadow: 1px 1px 0 #f0f4ff;
+}
+.encabezado-alumno p { 
+    color: #6b7280; 
+    margin-top: 5px; 
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* --- 3. LISTA DE TAREAS --- */
+.titulo-seccion { 
+    text-align: left; 
+    color: #4f46e5; 
+    margin-bottom: 20px; 
+    font-size: 1.5rem; 
+    font-weight: 800;
+    padding-left: 5px;
+}
+
+.grid-tareas-alumno {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tarjeta-tarea-alumno {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px 25px; 
+    border: 1px solid #e5e7eb;
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: left;
+    width: 100%;
+}
+
+.tarjeta-tarea-alumno:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    border-color: #c7d2fe; 
+}
+
+.info-tarea-alumno {
+    display: flex;
+    flex-direction: column;
+}
+
+.numero-tarea { 
+    font-size: 0.85rem; 
+    color: #9ca3af; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.titulo-tarea { 
+    font-size: 1.35rem; /* Título de la tarjeta más prominente */
+    font-weight: 900; 
+    color: #1f2937; 
+    margin: 5px 0; 
+}
+
+.tiempo-tarea { 
+    font-size: 0.9rem; 
+    color: #4f46e5; 
+    background-color: #e0e7ff; 
+    padding: 4px 10px; 
+    border-radius: 8px; 
+    display: inline-block; 
+    width: fit-content;
+    font-weight: 700;
+}
+
+.flecha-ir { 
+    font-size: 2rem; 
+    color: #6366f1; 
+    transition: transform 0.2s;
+}
+.tarjeta-tarea-alumno:hover .flecha-ir {
+    transform: translateX(5px);
+}
+
+/* --- 4. BOTÓN SALIR (Desconexión) --- */
+.boton-salir {
+    margin-top: 50px;
+    background: none;
+    border: 2px solid #9ca3af;
+    padding: 12px 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #6b7280;
+    font-weight: 800;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+.boton-salir:hover { 
+    background-color: #fef2f2;
+    border-color: #dc2626;
+    color: #dc2626;
+}
+
+/* --- 5. RESPONSIVIDAD --- */
+@media (max-width: 600px) {
+    .encabezado-alumno {
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+    .avatar-grande {
+        font-size: 3rem;
+    }
+    .encabezado-alumno h1 {
+        font-size: 1.6rem;
+    }
+    .titulo-tarea {
+        font-size: 1.2rem;
+    }
+    .flecha-ir {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,70 @@
+/* src/Componentes/TarjetaEstadistica.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+.tarjeta-estadistica {
+    padding: 2rem; /* p-8, más espacio */
+    border-radius: 20px; /* Bordes suaves */
+    /* Sombra elegante y levantada */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Más separación entre icono y texto */
+    transition: all 0.3s ease-out;
+}
+.tarjeta-estadistica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 🚨 AJUSTE DE TAMAÑO DEL ICONO/EMOJI 🚨 */
+.icono-grande {
+    font-size: 4.5rem; /* ¡MUY grande! El tamaño del emoji/icono */
+}
+
+.titulo-tarjeta {
+    font-size: 1.2rem; /* Título más grande y legible */
+    font-weight: 800;
+    color: #4f46e5; /* Color primario vibrante */
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.valor-tarjeta {
+    font-size: 3.5rem; /* El número principal */
+    font-weight: 900; 
+    color: #1f2937; 
+    line-height: 1; 
+}
+/* ---------------------------------- */
+
+/* Clases de color (mapeo de Tailwind) */
+.bg-indigo-100 {
+    background-color: #e0e7ff; /* Lila/Azul muy claro */
+    border: 1px solid #c7d2fe;
+}
+.bg-green-100 {
+    background-color: #d1fae5; /* Verde claro */
+    border: 1px solid #a7f3d0;
+}
+.bg-yellow-100 {
+    background-color: #fef9c3; /* Amarillo claro */
+    border: 1px solid #fcd34d;
+}
+
+/* 📱 RESPONSIVIDAD BÁSICA */
+@media (max-width: 640px) {
+    .tarjeta-estadistica {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    .icono-grande {
+        font-size: 3.5rem; /* Ajuste en móvil para que no sea excesivo */
+    }
+    .valor-tarjeta {
+        font-size: 3rem; 
+    }
+    .titulo-tarjeta {
+        font-size: 1rem;
+    }
+}

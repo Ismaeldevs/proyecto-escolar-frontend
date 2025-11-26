@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+/* Contenedor principal centrado */
+.jcc-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;       /* Centrado vertical */
+  justify-content: center;   /* Centrado horizontal */
+  background: linear-gradient(135deg, #fff4fb, #e0f0ff);
+  font-family: 'Fredoka One', 'Comic Sans MS', cursive, sans-serif;
+  overflow: hidden;
+}
+
+
+/* Card centrada principal */
+.jcc-cardNivel,
+.jcc-card-juego,
+.jcc-card-menu,
+.jcc-card-fin,
+.jcc-card-carga {
+  width: 900px;
+  max-width: 90vw;
+  height: 500px;
+  max-height: 85vh;
+  background: linear-gradient(135deg, #fef9ff, #e6f0ff);
+  border-radius: 50px;
+  padding: 25px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+/* Pantalla de carga */
+.jcc-card-carga {
+  width: 450px;
+  padding: 25px;
+  background: #fff4f8;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.jcc-loadingTitle {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.jcc-barra-carga {
+  width: 80%;
+  height: 22px;
+  background: #ffe6f0;
+  border-radius: 14px;
+  margin: 8px auto;
+  overflow: hidden;
+  border: 2px solid #ccc;
+}
+
+.jcc-progreso {
+  height: 100%;
+  background: linear-gradient(90deg,#ff80ab,#ff4081);
+  transition: width 0.2s linear;
+}
+
+/* Botón de sonido */
+.jcc-btn-sonido {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 12px 16px;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  border: 2px solid #ffcb05;
+  background: linear-gradient(135deg, #ff9a9e, #ff6a95);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.jcc-btn-sonido:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ff6a95, #ff3d77);
+}
+
+/* Grid de niveles */
+.jcc-nivelesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.jcc-btn-nivel {
+  padding: 16px;
+  font-weight: 700;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #fff;
+  background: linear-gradient(135deg, #4fc3f7, #0288d1);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.jcc-btn-nivel:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #81d4fa, #0277bd);
+}
+
+/* Premios */
+.jcc-premios {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.jcc-emojiFinal {
+  font-size: 3rem;
+  animation: jcc-bounce 0.8s infinite alternate;
+}
+
+/* Juego */
+.jcc-gridCategorias {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.jcc-categoria-card {
+  border-radius: 30px;
+  padding: 16px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease;
+}
+.jcc-categoria-card:hover {
+  transform: scale(1.04);
+}
+
+.jcc-categoria-items {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.jcc-item-emoji {
+  font-size: 2.5rem;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s ease;
+}
+.jcc-item-emoji:hover {
+  transform: scale(1.3);
+}
+
+/* Mensaje de acierto/error */
+.jcc-mensaje {
+  height: 28px;
+  font-size: 1.2rem;
+  margin: 8px 0;
+  font-weight: 600;
+  color: #ff4081;
+}
+
+/* Items pendientes */
+.jcc-itemsPendientes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  background: #fff3e0;
+  border-radius: 25px;
+  border: 3px solid #ffb74d;
+}
+
+/* Botones de volver / siguiente */
+.jcc-btn-volver, .jcc-btn-siguiente {
+  padding: 16px 22px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin: 6px;
+  color: #fff;
+  background: linear-gradient(135deg, #ffb74d, #ff8a65);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.jcc-btn-volver:hover, .jcc-btn-siguiente:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ffd54f, #ff7043);
+}
+
+/* Animaciones */
+@keyframes jcc-bounce {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-10px);}
+}
+
+/* Responsividad */
+@media (max-width: 760px) {
+  .jcc-cardNivel, .jcc-card-juego {
+    width: 560px;
+    height: 420px;
+  }
+  .jcc-btn-nivel, .jcc-btn-volver, .jcc-btn-siguiente {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .jcc-cardNivel, .jcc-card-juego {
+    width: calc(100vw - 32px);
+    height: calc(70vh);
+  }
+  .jcc-btn-nivel, .jcc-btn-volver, .jcc-btn-siguiente {
+    font-size: 0.9rem;
+  }
+}

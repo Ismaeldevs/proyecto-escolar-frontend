@@ -1,0 +1,268 @@
+/* --- CONTENEDOR GLOBAL SOLO DEL JUEGO --- */
+.tren-numerico-body {
+  margin: 0;
+  background-image: url('./images/fondobody.png');
+  background-size: 400px;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px) rotate(-1deg); }
+  50% { transform: translateX(6px) rotate(1deg); }
+  75% { transform: translateX(-6px) rotate(-1deg); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes trenSeVa {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(120%); opacity: 0; }
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes estrellasPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.juego-tren-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 80, 150, 0.15);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.juego-header h2 {
+  margin: 0;
+  font-weight: 600;
+  color: #005a9e;
+}
+
+/* --- ZONA DEL TREN --- */
+.zona-tren {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  min-height: 160px;
+  background-color: #f4f9ff;
+  border: 3px dashed #a0b9e8;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+  min-width: 300px;
+}
+
+.zona-tren.zona-over {
+  background-color: #dbeaff;
+  border-color: #007bff;
+  border-style: solid;
+  transform: scale(1.01);
+}
+
+.zona-tren.shake {
+  animation: shake 0.5s ease-in-out;
+  border-color: #e53e3e;
+  background-color: #fff0f0;
+}
+
+.zona-tren.juego-ganado {
+  animation: trenSeVa 2s ease-in-out forwards;
+  animation-delay: 0.5s;
+  border: none;
+  background-color: transparent;
+}
+
+/* --- LOCOMOTORA Y VAGONES --- */
+.locomotora {
+  width: 150px;
+  height: 120px;
+  background-image: url('./images/locomotora.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.vagon {
+  width: 120px;
+  height: 108px;
+  background-image: url('./images/vagon.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: grab;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.vagon-numero {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(163, 126, 126, 0.7);
+  position: relative;
+  left: 8px;
+}
+
+.vagon-en-tren {
+  animation: pop 0.3s ease-out;
+}
+
+.vagon-flotante {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+/* --- VAGONES DISPONIBLES --- */
+.zona-vagones-disponibles {
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  border-top: 2px solid #eee;
+}
+
+.vagones-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* --- MENSAJE GANADOR --- */
+.mensaje-ganador {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #328ced;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  animation: pop 0.8s ease-out;
+}
+
+/* --- PANTALLAS --- */
+.pantalla-menu {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 80, 150, 0.15);
+  text-align: center;
+}
+
+.titulo-juego {
+  font-size: 2.5rem;
+  color: #005a9e;
+}
+
+.locomotora-menu {
+  width: 200px;
+  height: 160px;
+  background-image: url('./images/locomotora.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 20px auto;
+  animation: shake 5s infinite;
+  animation-delay: 2s;
+}
+
+.boton-jugar {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pantalla-nivel-completo {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- MODAL NIVEL --- */
+.modal-nivel {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.estrellas {
+  font-size: 3rem;
+}
+
+.estrellas span {
+  opacity: 0;
+  animation: estrellasPop 0.5s forwards;
+}
+
+.estrellas span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.estrellas span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+  .tren-numerico-body {
+    padding: 20px 10px;
+    align-items: flex-start;
+  }
+
+  .vagon {
+    width: 80px;
+    height: 72px;
+  }
+
+  .vagon-numero {
+    font-size: 1.5rem;
+  }
+
+  .locomotora {
+    width: 120px;
+    height: 90px;
+  }
+}

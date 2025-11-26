@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+.pagina-crear-sala {
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; 
+    background-image: url('/fondosala.png'); 
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+}
+
+.tarjeta-crear-sala {
+    width: 100%;
+    max-width: 550px;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 30px; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border: 4px solid #fcfcfc;
+    position: relative;
+    animation: popIn 0.5s ease-out;
+}
+
+
+@keyframes popIn {
+    0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.titulo-crear-sala {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #4f46e5; 
+    text-shadow: 2px 2px 0px #e0e7ff;
+}
+
+.descripcion-crear-sala {
+    color: #6b7280;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.formulario-crear-sala {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.etiqueta-input-bold {
+    display: block;
+    color: #374151;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+
+.input-bonito {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.2s ease;
+    background-color: #f9fafb;
+    box-sizing: border-box; 
+}
+
+.input-bonito:focus {
+    outline: none;
+    border-color: #6366f1;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.boton-generar-codigo {
+    width: 100%;
+    margin-top: 10px;
+    padding: 18px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 10px 20px rgba(79, 172, 254, 0.4);
+}
+
+.boton-generar-codigo:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(79, 172, 254, 0.6);
+    filter: brightness(1.1);
+}
+
+.boton-generar-codigo:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(79, 172, 254, 0.3);
+}
+
+.mensaje-error {
+    background-color: #fef2f2;
+    color: #dc2626;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #fca5a5;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.mensaje-exito {
+    background-color: #ecfdf5;
+    color: #059669;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid #6ee7b7;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.enlace-volver-dashboard {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.enlace-volver-texto {
+    font-size: 1rem;
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+
+.enlace-volver-texto:hover {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 640px) {
+    .tarjeta-crear-sala {
+        padding: 2rem;
+        width: 100%;
+    }
+    .titulo-crear-sala {
+        font-size: 1.8rem;
+    }
+    .pagina-crear-sala {
+        padding: 20px 15px;
+    }
+}

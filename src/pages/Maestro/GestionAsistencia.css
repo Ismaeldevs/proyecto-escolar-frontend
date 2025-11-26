@@ -1,0 +1,151 @@
+.contenedor-asistencia {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.encabezado-asistencia {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.boton-volver {
+    text-decoration: none;
+    color: #666;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.boton-volver:hover {
+    color: #000;
+}
+
+.subtitulo-sala {
+    color: #4f46e5;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.panel-gestion {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .panel-gestion {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-agregar-alumno {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-nombre-alumno {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.boton-agregar-alumno {
+    padding: 10px 20px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.boton-agregar-alumno:hover {
+    background-color: #4338ca;
+}
+
+.lista-visual {
+    list-style: none;
+    padding: 0;
+}
+
+.item-alumno {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-left: 5px solid #ccc;
+    transition: transform 0.1s;
+}
+
+.item-alumno:hover {
+    transform: translateX(2px);
+}
+
+.item-alumno.presente {
+    border-left-color: #22c55e;
+    background-color: #f0fdf4;
+}
+
+.item-alumno.ausente {
+    border-left-color: #ef4444;
+}
+
+.info-alumno {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nombre-alumno {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.texto-estado {
+    font-size: 0.7rem;
+    color: #666;
+    background: rgba(0,0,0,0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.boton-borrar-alumno {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.boton-borrar-alumno:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.nota-ayuda {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+    background-color: #fffbeb;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fcd34d;
+}
+
+.vacio {
+    text-align: center;
+    color: #999;
+    margin-top: 20px;
+}

@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+.contenedor-principal {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffffff, #ffffff);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  overflow: hidden;
+}
+
+/* Cards centradas */
+.inicio-card, .juego-card, .fin-card {
+
+  width: 900px;
+  height: 500px;
+  max-width: 90vw;
+  max-height: 85vh;
+  background: #fffbea;
+  border-radius: 50px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-image: url(/images/AbcDesordenadoimgPrincipal.png);
+}
+
+.centered-card {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Botones */
+.btn-jugar, .btn-volver {
+
+  margin: 10px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  background-color: #4acfd1;
+  color: white;
+  transition: transform 0.2s, background 0.3s;
+}
+.btn-jugar:hover, .btn-volver:hover {
+  background-color: #ffcb05;
+  transform: scale(1.05);
+}
+
+/* Slots */
+.slots-area {
+    
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 30px;
+  justify-items: center;
+  margin-top: -40px;
+}
+.slot {
+  width: 55px;
+  height: 55px;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  transition: background 0.3s, color 0.3s;
+}
+.slot-placed {
+  background: #a5d6a7;
+  color: white;
+}
+
+/* Letras */
+.letras-area {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  margin-top: 0;
+}
+.letter {
+  position: absolute;
+  font-size: 2.6rem;
+  font-family: "Fredoka One", "Comic Sans MS", cursive;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #ff7eb9, #ff65a3, #7afcff, #feff9c);
+  background-size: 300% 300%;
+  animation: colorShift 3s ease infinite;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.2s, background 0.5s;
+}
+@keyframes colorShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.letter.caida {
+  animation: caer 1s ease-in forwards;
+}
+@keyframes caer {
+  0% { transform: translateY(-120px) rotate(0deg); opacity: 0.5; }
+  100% { transform: translateY(0) rotate(360deg); opacity: 1; }
+}
+
+/* Letras fallidas */
+.letter-wrong {
+  background: red !important;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+/* Mensaje */
+.mensaje {
+  opacity: 1;
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #333;
+  transition: opacity 0.5s;
+}
+
+/* Barra de carga */
+.barra-carga {
+  width: 80%;
+  height: 20px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px auto;
+  border: 2px solid #ccc;
+}
+.progreso {
+  height: 100%;
+  background: linear-gradient(90deg, #4acfd1, #ffcb05);
+  transition: width 0.2s;
+}
+
+/* Botón de sonido */
+.btn-sonido {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: #fff3b0;
+  border: 2px solid #ffcb05;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background 0.3s;
+}
+.btn-sonido:hover {
+  background: #ffcb05;
+  transform: scale(1.1);
+}
+
+/* Ocultar control de audio */
+.audio-element { display: none; }

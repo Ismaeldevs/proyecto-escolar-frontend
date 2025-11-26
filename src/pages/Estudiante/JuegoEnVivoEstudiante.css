@@ -1,0 +1,64 @@
+.contenedor-estudiante-vivo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+}
+.espera {
+    background-color: #46178f;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+.btn-salir { padding: 10px 20px; background: white; border: none; border-radius: 5px; cursor: pointer; color: #333; font-weight: bold; margin-top: 20px; }
+
+.header-pregunta-movil { background: white; padding: 15px; text-align: center; font-weight: bold; font-size: 1.2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+.grid-botones-movil { 
+    flex: 1; 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr;
+    gap: 15px; 
+    padding: 20px;
+    max-height: 500px;
+}
+.btn-respuesta { 
+    border: none; 
+    border-radius: 12px; 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: white; 
+    cursor: pointer; 
+    box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.btn-respuesta:active { transform: translateY(4px); box-shadow: none; }
+
+/* Colores (Mismos que maestro) */
+.color-0 { background-color: #e21b3c; }
+.color-1 { background-color: #1368ce; }
+.color-2 { background-color: #d89e00; }
+.color-3 { background-color: #26890c; }
+
+.pantalla-feedback {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.pantalla-feedback.correcto { background-color: #26890c; }
+.pantalla-feedback.incorrecto { background-color: #e21b3c; }
+.pantalla-feedback.tiempo_agotado { background-color: #555; }

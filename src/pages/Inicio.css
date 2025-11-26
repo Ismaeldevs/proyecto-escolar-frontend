@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+
+.pagina-inicio * {
+    box-sizing: border-box;
+}
+
+
+.pagina-inicio {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    
+    overflow-x: hidden; 
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.contenedor-inicio {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 40px;
+    border: none; 
+    max-width: 1550px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+
+.titulo-principal {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #2d3436;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    margin-top: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    -webkit-text-stroke: 0 !important;
+    padding: 0 !important;
+}
+
+
+.texto-degradado {
+    background: linear-gradient(to right, #6c5ce7, #ff7675); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    -webkit-text-stroke: 0;
+    text-shadow: none;
+    box-shadow: none !important;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    color: #636e72;
+    margin-bottom: 3.5rem;
+    font-weight: 500;
+}
+
+
+.acciones-inicio {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative; 
+}
+
+
+.boton {
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px 35px; 
+    border-radius: 50px;
+    font-size: 1rem; 
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap; 
+}
+
+
+.boton-maestro {
+    background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+    color: white;
+    box-shadow: 0 10px 20px rgba(108, 92, 231, 0.2);
+}
+.boton-maestro:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(108, 92, 231, 0.4);
+}
+
+
+.boton-alumno {
+    background: linear-gradient(135deg, #ff9f43 0%, #ffcb80 100%);
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 159, 67, 0.2);
+}
+.boton-alumno:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(255, 159, 67, 0.4);
+}
+
+
+.contenedor-mascota {
+    position: absolute;
+    right: -350px; 
+    top: -130px;
+    
+    display: flex;
+    pointer-events: none; 
+}
+
+.mascota-img {
+    width: 180px;
+    height: auto;
+    animation: flotarMascota 3s ease-in-out infinite;
+    mix-blend-mode: multiply; 
+    filter: contrast(1.1);
+}
+
+@keyframes flotarMascota {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+
+@media (max-width: 900px) {
+    .titulo-principal { 
+        font-size: 2rem; 
+    }
+    
+    .contenedor-inicio { 
+        padding: 2.5rem 1.5rem; 
+    }
+    
+    .acciones-inicio {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .boton { 
+        width: 100%; 
+        text-align: center; 
+    }
+    
+    .contenedor-mascota {
+        position: static; 
+        transform: none;
+        margin-top: 30px;
+        right: auto;
+        pointer-events: auto;
+    }
+    
+    .mascota-img { 
+        width: 150px; 
+    } 
+}
+
+@keyframes flotarMascota {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* --- RESPONSIVE (CELULARES) --- */
+@media (max-width: 900px) {
+    .titulo-principal { 
+        font-size: 2rem; 
+    }
+    
+    .contenedor-inicio { 
+        padding: 2.5rem 1.5rem; 
+    }
+    
+    .acciones-inicio {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .boton { 
+        width: 100%; 
+        text-align: center; 
+    }
+    
+    .contenedor-mascota {
+        position: static; 
+        transform: none;
+        margin-top: 30px;
+        right: auto;
+        pointer-events: auto;
+    }
+    
+    .mascota-img { 
+        width: 150px; 
+    } 
+}
+@keyframes flotarMascota {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* --- RESPONSIVE (CELULARES) --- */
+@media (max-width: 900px) {
+    .titulo-principal { 
+        font-size: 2rem; 
+    }
+    
+    .contenedor-inicio { 
+        padding: 2.5rem 1.5rem; 
+    }
+    
+    .acciones-inicio {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .boton { 
+        width: 100%; 
+        text-align: center; 
+    }
+    
+    .contenedor-mascota {
+        position: static; 
+        transform: none;
+        margin-top: 30px;
+        right: auto;
+        pointer-events: auto;
+    }
+    
+    .mascota-img { 
+        width: 150px; 
+    } 
+}
+
+
+
+@keyframes flotarMascota {
+
+    0% { transform: translateY(0px) rotate(0deg); }
+
+    50% { transform: translateY(-10px) rotate(2deg); } /* Sube y rota un poquito */
+
+    100% { transform: translateY(0px) rotate(0deg); }
+
+}
+
+
+
+/* Ajuste para celulares (pon esto al final de tu archivo CSS) */
+
+@media (max-width: 768px) {
+
+    .mascota-img {
+
+        width: 140px; /* Se hace más pequeña en pantallas chicas */
+
+    }
+
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .titulo-principal { font-size: 2rem; }
+
+    .contenedor-inicio { padding: 2.5rem 1.5rem; }
+
+    .boton { width: 100%; text-align: center; }
+
+}

@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap');
+
+/* --- 1. CONTENEDOR PRINCIPAL --- */
+.contenedor-escritorio {
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 40px 20px;
+    background-color: #fffdf9;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23dae1e7'%3E%3Cpath d='M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-11.3-64.5H88V424z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' fill='%23dae1e7'%3E%3Cpath d='M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 40c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm144 418c0 3.3-2.7 6-6 6H54c-3.3 0-6-2.7-6-6V118c0-3.3 2.7-6 6-6h42v36c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12v-36h42c3.3 0 6 2.7 6 6v340zM268 272c0 6.6-5.4 12-12 12h-128c-6.6 0-12-5.4-12-12s5.4-12 12-12h128c6.6 0 12 5.4 12 12zm0 96c0 6.6-5.4 12-12 12h-128c-6.6 0-12-5.4-12-12s5.4-12 12-12h128c6.6 0 12 5.4 12 12z'/%3E%3C/svg%3E"), 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23dae1e7'%3E%3Cpath d='M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-11.3-64.5H88V424z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512' fill='%23dae1e7'%3E%3Cpath d='M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 40c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm144 418c0 3.3-2.7 6-6 6H54c-3.3 0-6-2.7-6-6V118c0-3.3 2.7-6 6-6h42v36c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12v-36h42c3.3 0 6 2.7 6 6v340zM268 272c0 6.6-5.4 12-12 12h-128c-6.6 0-12-5.4-12-12s5.4-12 12-12h128c6.6 0 12 5.4 12 12zm0 96c0 6.6-5.4 12-12 12h-128c-6.6 0-12-5.4-12-12s5.4-12 12-12h128c6.6 0 12 5.4 12 12z'/%3E%3C/svg%3E"),
+        linear-gradient(#e6eefc 1px, transparent 1px),
+        linear-gradient(90deg, #e6eefc 1px, transparent 1px);
+
+    background-position: 10% 5%, 90% 15%, 5% 90%, 95% 85%, 0 0, 0 0;
+    background-size: 180px, 140px, 120px, 110px, 30px 30px, 30px 30px;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+    color: #5d5d5d;
+}
+
+
+.contenedor-escritorio::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #ffe3e3 0%, rgba(255,255,255,0) 70%);
+    top: -100px;
+    left: -100px;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+.contenedor-escritorio::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #e0f7fa 0%, rgba(255,255,255,0) 70%);
+    bottom: -150px;
+    right: -150px;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+
+.barra-superior {
+    background: rgba(255, 255, 255, 1); 
+    padding: 15px 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 3px solid #ff8fa3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: fit-content;
+    min-width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 100;
+}
+
+/* --- TÍTULO --- */
+.titulo-escritorio {
+    font-size: 2rem; 
+    font-weight: 800;
+    color: #ff8fa3;
+    margin: 0;
+    text-shadow: 2px 2px 0px #fff;
+    flex-grow: 1;
+    white-space: nowrap;
+}
+
+.boton-cerrar-sesion {
+    background: white;
+    border: 2px solid #ffcccc;
+    color: #ff8fa3;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap; 
+}
+
+.boton-cerrar-sesion:hover {
+    background: #ff8fa3;
+    color: white;
+    border-color: #ff8fa3;
+    transform: translateY(-2px);
+}
+
+/* --- 3. BOTONES DE ACCIÓN (ESTILO CARAMELO 3D) --- */
+.acciones-principales {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.boton-crear-sala, .boton-crear-tarea, .boton-crear-juego {
+    flex: 1;
+    min-width: 220px;
+    text-align: center;
+    padding: 20px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Colores y Gradients */
+.boton-crear-sala { 
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    box-shadow: 0 10px 20px rgba(79, 172, 254, 0.518);
+}
+.boton-crear-tarea { 
+    background: linear-gradient(135deg, #7c53db 0%, #b3a2dc 100%);
+    box-shadow: 0 10px 20px rgba(142, 105, 230, 0.521);
+}
+.boton-crear-juego { 
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    box-shadow: 0 10px 20px rgba(255, 117, 140, 0.582);
+}
+
+/* Efecto Hover (Levantar y brillar) */
+.boton-crear-sala:hover, 
+.boton-crear-tarea:hover, 
+.boton-crear-juego:hover {
+    transform: translateY(-5px) scale(1.02);
+    filter: brightness(1.1);
+}
+
+.boton-crear-sala:hover { box-shadow: 0 15px 30px rgba(79, 172, 254, 0.6); }
+.boton-crear-tarea:hover { box-shadow: 0 15px 30px rgba(161, 140, 209, 0.6); }
+.boton-crear-juego:hover { box-shadow: 0 15px 30px rgba(255, 117, 140, 0.6); }
+
+/* Efecto Click */
+.boton-crear-sala:active, 
+.boton-crear-tarea:active, 
+.boton-crear-juego:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Efecto Brillo (Shine) */
+.boton-crear-sala::after, 
+.boton-crear-tarea::after, 
+.boton-crear-juego::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+.boton-crear-sala:hover::after, 
+.boton-crear-tarea:hover::after, 
+.boton-crear-juego:hover::after {
+    left: 100%;
+}
+
+/* --- 4. ZONA DE CONTENIDO --- */
+.seccion-salas {
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Mascota / Estado Vacío */
+.contenedor-vacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px auto; 
+    padding: 0 20px;
+    animation: aparecerSuave 0.8s ease-out;
+}
+
+.imagen-mascota-bienvenida {
+    width: 100%;
+    height: auto;
+    max-width: 320px; 
+    margin-bottom: 10px;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.1));
+    animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes aparecerSuave {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 5. GRID DE SALAS --- */
+.lista-salas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta-sala {
+    background: white;
+    border-radius: 30px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(220, 220, 220, 0.4);
+    border: 3px solid #fcfcfc;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-sala:hover {
+    transform: translateY(-5px);
+    border-color: #ffe0e6;
+}
+
+.encabezado-tarjeta-sala {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed #ececec;
+    margin-bottom: 15px;
+}
+.nombre-escuela { font-size: 1.3rem; font-weight: 800; color: #636e72; margin: 0; word-break: break-word; }
+.grado-sala { font-size: 1rem; color: #a4b0be; margin: 5px 0 0 0; }
+.codigo-badge { background-color: #fff3cd; color: #d68910; padding: 3px 10px; border-radius: 10px; font-size: 0.85rem; font-weight: bold; margin-left: 8px; }
+
+/* CORRECCIÓN FINAL para los botones de la Sala (Lista y Tacho) 🚨 */
+
+.acciones-encabezado-sala {
+    display: flex;
+    gap: 12px;
+    position: relative;
+    top: -5px; 
+}
+
+.boton-ver-lista, .boton-eliminar-sala {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    cursor: pointer; 
+    text-decoration: none; 
+    font-size: 1.1rem; 
+    transition: all 0.2s ease;
+    padding: 0; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-left: 0; 
+    text-indent: -9999px; 
+    overflow: hidden; 
+}
+.boton-ver-lista::before {
+    content: "📋"; 
+    text-indent: 0; 
+    font-size: 1.2em;
+    color: inherit; 
+}
+.boton-eliminar-sala::before {
+    content: "🗑️";
+    text-indent: 0;
+    font-size: 1.2em;
+    color: inherit;
+}
+
+
+.boton-ver-lista { 
+    background: #e0faff; 
+    color: #4facfe; 
+    border-color: #4facfe44;
+}
+.boton-ver-lista:hover { 
+    background: #4facfe; 
+    color: white; 
+    box-shadow: 0 4px 10px rgba(79, 172, 254, 0.5);
+}
+
+.boton-eliminar-sala {
+    background: #ffe6e6; 
+    color: #ff7675; 
+    border-color: #ff767544;
+}
+.boton-eliminar-sala:hover { 
+    background: #ff7675; 
+    color: white; 
+    box-shadow: 0 4px 10px rgba(255, 118, 117, 0.5);
+}
+
+.seccion-subtipo { border-radius: 20px; padding: 15px; margin-top: 15px; }
+.seccion-subtipo.juego { background-color: #fff0f5; }
+.seccion-subtipo.tarea { background-color: #f0faff; }
+.titulo-subtipo { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #b2bec3; margin-bottom: 10px; letter-spacing: 1px; }
+
+.lista-tareas { list-style: none; padding: 0; margin: 0; }
+.item-tarea { background: rgba(255,255,255,0.8); padding: 10px 15px; border-radius: 15px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; color: #555; }
+.acciones-tarea { display: flex; align-items: center; gap: 8px; }
+
+.btn-mini, .btn-mini-borrar { width: 32px; height: 32px; border-radius: 50%; display: flex; justify-content: center; align-items: center; border: none; cursor: pointer; text-decoration: none; font-size: 0.9rem; transition: 0.2s; }
+.btn-mini { background: #dfe6e9; color: #636e72; }
+.btn-mini:hover { background: #fdcb6e; color: white; transform: rotate(15deg); }
+.btn-mini-borrar { background: #ffeaa7; color: #d63031; opacity: 0.7; }
+.btn-mini-borrar:hover { background: #ff7675; color: white; opacity: 1; }
+
+.btn-lanzar { background: linear-gradient(135deg, #fd79a8, #e84393); color: white; border: none; padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; cursor: pointer; box-shadow: 0 3px 8px rgba(232, 67, 147, 0.3); animation: palpitar 2s infinite; }
+.mensaje-vacio { text-align: center; color: #cbd5e0; font-size: 0.9rem; font-style: italic; padding: 10px; }
+
+@keyframes palpitar { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+
+@media (max-width: 768px) {
+    .contenedor-escritorio { 
+        padding: 20px 15px; 
+        height: auto; 
+    }
+
+    .barra-superior { 
+        flex-direction: column; 
+        padding: 20px; 
+        gap: 15px; 
+        text-align: center; 
+        width: 100%;
+        max-width: 100%; 
+    }
+
+    .titulo-escritorio {
+        font-size: 1.5rem; 
+        white-space: normal; 
+    }
+
+    .acciones-principales { 
+        flex-direction: column; 
+        gap: 15px; 
+        width: 100%;
+        padding: 0; 
+        box-sizing: border-box;
+    }
+
+    .boton-crear-sala, .boton-crear-tarea, .boton-crear-juego { 
+        box-sizing: border-box; 
+        width: 100%; 
+        max-width: 100%; 
+        min-width: 0; 
+        margin: 0; 
+        display: block; 
+        font-size: 1rem;
+    }
+
+    .lista-salas { 
+        grid-template-columns: 1fr; 
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .tarjeta-sala {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .imagen-mascota-bienvenida { 
+        max-width: 240px; 
+    }
+}

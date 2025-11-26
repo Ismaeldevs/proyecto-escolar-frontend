@@ -1,0 +1,381 @@
+/* src/Componentes/FormularioTareaBase.css */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+/* --- 1. CONTENEDOR PRINCIPAL (Reducido para mostrar el fondo) --- */
+.contenedor-formulario-base {
+    font-family: 'Nunito', sans-serif;
+    max-width: 900px; 
+    width: 100%;
+    background-color: white;
+    padding: 3rem; 
+    border-radius: 30px; 
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1); 
+    border: 4px solid #fcfcfc; 
+    animation: fadeIn 0.5s ease-out;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.titulo-formulario {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #4f46e5; 
+    text-shadow: 2px 2px 0px #e0e7ff;
+}
+.descripcion-formulario {
+    color: #6b7280;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* --- 2. FORMULARIO GENERAL Y ELEMENTOS DE INPUT --- */
+.formulario-base {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+.etiqueta-input, .etiqueta-input-bold {
+    display: block;
+    color: #374151;
+    font-weight: 800;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    margin-left: 5px;
+}
+.input-select, .input-text, .input-textarea {
+    width: 100%;
+    padding: 14px 20px; 
+    border: 2px solid #e5e7eb; 
+    border-radius: 15px; 
+    font-size: 1rem; 
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.3s ease;
+    background-color: #f9fafb;
+    box-sizing: border-box; 
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05); 
+}
+.input-select:focus, .input-text:focus, .input-textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    background-color: white;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.input-textarea {
+    min-height: 100px;
+    resize: vertical; 
+    overflow: auto; 
+}
+
+.clase-mb-4 { margin-bottom: 1.5rem; } 
+
+/* --- 3. SECCIÓN DE CONFIGURACIÓN (Estilo de Tarjetas Agrupadas) --- */
+.seccion-configuracion {
+    padding: 2rem; 
+    background-color: #f0f4ff; 
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid #dbeafe;
+}
+.subtitulo-configuracion {
+    font-size: 1.6rem; 
+    font-weight: 900;
+    color: #4f46e5;
+    margin-bottom: 1.5rem; 
+    padding-bottom: 6px;
+    border-bottom: 3px solid #c7d2fe; 
+}
+.grid-configuracion {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+    margin-top: 1rem;
+}
+@media (min-width: 768px) {
+    .grid-configuracion {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Estilos para las tarjetas de configuración individuales */
+.grid-configuracion > div {
+    padding: 1.2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+}
+.grid-configuracion > div:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-tiempo { background-color: #fffbeb; border: 2px solid #fcd34d; } 
+.tarjeta-fecha { background-color: #fee2e2; border: 2px solid #fca5a5; }
+.tarjeta-estilo { 
+    background-color: #f3e8ff; 
+    border: 2px solid #d8b4fe; 
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-ayuda {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+/* 🎨 CORRECCIÓN: ESTILOS PARA EL COLOR PICKER CIRCULAR */
+.input-color-wrapper { 
+    height: 40px;
+    width: 40px;
+    border: 3px solid white; 
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+    flex-shrink: 0; 
+    cursor: pointer;
+    /* 🚨 Ajuste extra para asegurar que el input se vea circular en todos los navegadores */
+    position: relative; 
+}
+
+.input-color {
+    /* 🚨 HACK: Mover el input fuera de la vista pero mantener la funcionalidad */
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%; 
+    height: 200%;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    /* Esto suele funcionar: el navegador aplica el color al wrapper contenedor */
+}
+
+/* --- 4. SECCIÓN DE PREGUNTA INDIVIDUAL (Editor) --- */
+.seccion-pregunta-individual {
+    padding: 2.5rem; 
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    /* 💜 CAMBIO: Borde lila/púrpura suave */
+    border: 3px solid #c5a7f3; 
+}
+.titulo-seccion-pregunta {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+/* Contenedor Multimedia */
+.contenedor-media-inputs {
+    /* 💜 CAMBIO: Fondo lila/púrpura muy claro */
+    background: #f3e8ff; 
+    border: 1px solid #d8b4fe;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+/* Opciones de Respuesta */
+.grid-opciones {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+}
+@media (min-width: 768px) {
+    .grid-opciones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.contenedor-opcion {
+    gap: 8px;
+    padding: 12px;
+    border-radius: 15px; 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+.contenedor-opcion:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
+}
+.input-radio {
+    width: 18px;
+    height: 18px;
+}
+.input-opcion-texto {
+    flex-grow: 1;
+    padding: 0; 
+    border: none;
+    background-color: transparent;
+    font-size: 0.95rem;
+    outline: none; 
+}
+
+/* 💜 Botón Agregar Pregunta (Caramelo Púrpura/Azul) */
+.boton-agregar-pregunta {
+    margin-top: 1.5rem;
+    padding: 18px;
+    border-radius: 18px;
+    font-size: 1.1rem;
+    /* 💜 CAMBIO: Degradado púrpura/azul (Cambiando el verde) */
+    background: linear-gradient(135deg, #8922cec1 0%, #4f46e5 100%); 
+    box-shadow: 0 8px 15px rgba(129, 16, 185, 0.4);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boton-agregar-pregunta:hover {
+    transform: translateY(-4px) scale(1.005);
+    box-shadow: 0 12px 25px rgba(129, 16, 185, 0.6);
+}
+
+/* --- 5. SECCIÓN DE LISTA DE PREGUNTAS (Visualización) --- */
+.seccion-lista-preguntas {
+    padding: 2rem;
+    background-color: #f8fafc;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05) inset;
+    border: 2px solid #e0e7ff;
+}
+.titulo-lista-preguntas {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #4f46e5;
+    margin-bottom: 1.5rem;
+}
+.lista-vacia {
+    color: #9ca3af;
+    padding: 20px;
+    border: 2px dashed #d1d5db;
+    border-radius: 15px;
+}
+.lista-preguntas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+.item-pregunta {
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* 💜 CAMBIO: Borde izquierdo lila */
+    border-left: 5px solid #8749ba; 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.item-pregunta:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.texto-pregunta-lista {
+    color: #374151;
+    font-weight: 700;
+    max-width: 80%; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.numero-pregunta {
+    font-weight: 900;
+    /* 💜 CAMBIO: Número de pregunta púrpura oscuro */
+    color: #6d0596; 
+    margin-right: 10px;
+}
+.acciones-pregunta button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+.acciones-pregunta .boton-editar-item {
+    color: #4f46e5;
+}
+.acciones-pregunta .boton-eliminar-pregunta {
+    color: #ef4444; 
+}
+.acciones-pregunta button:hover {
+    background-color: #f0f4ff;
+    transform: scale(1.1);
+}
+.acciones-pregunta .boton-eliminar-pregunta:hover {
+    background-color: #fee2e2;
+}
+
+/* --- 6. BOTÓN FINAL (Caramelo Azul/Púrpura) --- */
+.boton-guardar-tarea {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 20px;
+    border-radius: 20px;
+    font-weight: 900;
+    font-size: 1.2rem;
+    
+    /* 💜 CAMBIO: Degradado Azul/Púrpura más consistente */
+    background: linear-gradient(135deg, #4facfe 0%, #8922ce 100%); 
+    box-shadow: 0 10px 20px rgba(79, 172, 254, 0.4);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.boton-guardar-tarea.activo:hover {
+    transform: translateY(-4px) scale(1.005);
+    box-shadow: 0 15px 30px rgba(79, 172, 254, 0.6);
+    filter: brightness(1.05);
+}
+
+.boton-guardar-tarea.inactivo {
+    background: #e5e7eb;
+    color: #9ca3af;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* --- 7. MENSAJES Y ENLACE VOLVER --- */
+.mensaje-error, .mensaje-exito {
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: 700;
+}
+.mensaje-error {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+}
+.mensaje-exito {
+    /* 💜 CAMBIO: Fondo y borde de éxito lila/púrpura */
+    background-color: #f3e8ff;
+    color: #8922ce;
+    border: 1px solid #d8b4fe;
+}
+
+.enlace-volver-dashboard {
+    margin-top: 2rem;
+    text-align: center;
+}
+.enlace-volver-texto {
+    font-size: 1rem;
+    color: #9ca3af;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+.enlace-volver-texto:hover {
+    color: #4f46e5;
+}

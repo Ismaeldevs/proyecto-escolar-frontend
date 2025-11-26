@@ -1,0 +1,229 @@
+/* ===== PANEL GENERAL ===== */
+.juegoWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ===== INICIO ===== */
+.panelInicio {
+  background: white;
+  padding: 40px;
+  max-width: 500px;
+  border-radius: 25px;
+  text-align: center;
+  border-bottom: 8px solid #6366f1;
+  box-shadow: 0 0 25px #0002;
+}
+
+.inicioTitulo {
+  font-size: 45px;
+  font-weight: 900;
+  color: #ec4899;
+  margin-bottom: 10px;
+  animation: bounceSlow 3s infinite;
+}
+
+.inicioDesc {
+  color: #555;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btnPrincipal {
+  background: #6366f1;
+  color: white;
+  padding: 15px 30px;
+  font-size: 22px;
+  border-radius: 40px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btnPrincipal:hover {
+  transform: scale(1.05);
+  background: #4f46e5;
+}
+
+.btnSec {
+  background: #14b8a6;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btnSec:hover {
+  background: #0d9488;
+}
+
+/* ===== PROGRESO ===== */
+.panelProgreso {
+  background: white;
+  padding: 35px;
+  max-width: 500px;
+  border-radius: 25px;
+  border-bottom: 8px solid #14b8a6;
+  text-align: center;
+  box-shadow: 0 0 25px #0002;
+}
+
+.tituloProgreso {
+  font-size: 35px;
+  font-weight: 900;
+  color: #0d9488;
+}
+
+.itemNivel {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+/* ===== JUEGO ===== */
+.panelJuego {
+  background: #ffffffdd;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 0 20px #0003;
+  position: relative;
+}
+
+/* ============ 🔧 FLECHAS / DIBUJO ============ */
+.svgLines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  overflow: visible; 
+  z-index: 5;
+}
+
+.svgLines line {
+  stroke-linecap: round;
+  stroke-width: 6px;
+  stroke: #6366f1;
+  transition: all .15s ease-out;
+}
+
+/* ============ 🌟 EMOJIS EN COLOR REAL ============ */
+.colItem, .emoji, .sticker {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
+
+.emoji {
+  font-size: 36px;
+  color: inherit; 
+}
+
+/* ===== GRID ===== */
+.juegoHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.nivelTxt {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+.puntajeTxt {
+  font-size: 22px;
+  font-weight: bold;
+  color: #059669;
+}
+
+.mensajeTxt {
+  text-align: center;
+  font-size: 22px;
+  min-height: 30px;
+  margin-bottom: 20px;
+}
+
+.juegoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.colTitulo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Separar tarjetas entre sí un poco más */
+.juegoGrid > div > div {
+  margin-bottom: 20px;
+}
+
+.colItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.singular {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+.palabra {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ec4899;
+  text-align: center;
+}
+
+/* ===== GANASTE / FINAL ===== */
+.panelGano, 
+.panelFinal {
+  background: #f0fdf4;
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0 0 25px #0002;
+  border-bottom: 8px solid #10b981;
+}
+
+.tituloGano {
+  font-size: 40px;
+  font-weight: 900;
+  color: #059669;
+}
+
+.estrellas {
+  font-size: 50px;
+  margin: 20px 0;
+}
+
+.tituloFinal {
+  font-size: 45px;
+  font-weight: 900;
+  color: #ec4899;
+  margin-bottom: 20px;
+}
+
+/* ===== ANIMACIÓN ===== */
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}

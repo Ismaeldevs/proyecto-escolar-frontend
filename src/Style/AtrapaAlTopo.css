@@ -1,0 +1,222 @@
+.atrapa-al-topo-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #87CEEB; 
+    background-image: url('./images/fondo.png'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.atrapa-al-topo-container {
+    width: 550px;
+    padding: 25px;
+    background-color: #fdfaf6;
+    background-size: 200px;
+    border-radius: 20px;
+    border: 5px solid #bd936f;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Fredoka One', cursive, sans-serif;
+    color: #5C3317;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* TITULOS */
+.atrapa-al-topo-container h1 {
+    font-size: 2.8rem;
+    color: #e55934;
+    margin-top: 0;
+    text-shadow: 2px 2px #fdfaf6, 4px 4px #bd936f;
+}
+
+.atrapa-al-topo-container h2 {
+    font-size: 2rem;
+    color: #5C3317;
+}
+
+/* === BOTONES GENERALES (Jugar, Volver, etc.) === */
+.atrapa-al-topo-container button:not(.nivel-btn) {
+    font-family: inherit;
+    font-size: 1.5rem;
+    background-color: #34A853;
+    color: white;
+    border: 3px solid #5C3317;
+    border-radius: 15px;
+    padding: 10px 25px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 20px;
+}
+
+.atrapa-al-topo-container button:not(.nivel-btn):hover {
+    background-color: #2b8b45;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* METRICAS */
+.metricas {
+    margin-bottom: 20px;
+    background: #bd936f;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.metricas h3 {
+    color: white;
+    text-shadow: 2px 2px #5C3317;
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.metricas .puntaje { grid-column: 1 / 3; text-align: center; }
+.metricas .tiempo { text-align: left; }
+.metricas .objetivo { text-align: right; }
+
+/* TABLERO */
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    background-color: #8b4513;
+    border: 10px solid #5c3317;
+    border-radius: 10px;
+    padding: 10px;
+    width: 350px;
+    height: 350px;
+    margin: 20px auto;
+}
+
+/* AGUJEROS */
+.agujero {
+    background-color: #5c3317;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    position: relative;
+}
+.agujero.visible { background-color: #a0522d; }
+
+/* Topo visual simple */
+.topo { 
+    font-size: 3rem; 
+    animation: popUp 0.1s ease-out;
+}
+@keyframes popUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+/* ESTRELLAS (pantalla juego y final) */
+.estrellas { display: flex; justify-content: center; }
+.estrella {
+    font-size: 2rem;
+    margin: 0 3px;
+    cursor: default;
+
+}
+.estrella.llena { 
+    color: gold; 
+    transform: scale(1.2); 
+    opacity: 1; 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+/* === ARREGLO: ESTRELLAS VACÍAS GRISES Y QUIETAS === */
+.estrella.vacia { 
+    color: #ccc; 
+    opacity: 0.5; 
+    transform: scale(1);
+    filter: grayscale(100%); 
+    transition: none; 
+}
+
+/* === MAPA DE NIVELES === */
+.niveles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Botones redondos de nivel */
+.atrapa-al-topo-container .nivel-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    font-size: 1.3rem;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+    box-shadow: none;
+}
+
+.nivel-btn.desbloqueado {
+    background-color: #9be37f;
+    color: #222;
+    box-shadow: 0 4px 0 #7bc96f;
+}
+
+.nivel-btn.bloqueado {
+    background-color: #ccc;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.nivel-btn.desbloqueado:hover {
+    transform: scale(1.1);
+    background-color: #a8f08c;
+}
+
+/* MINI ESTRELLAS EN EL MAPA */
+.mini-estrellas {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mini-estrella {
+    font-size: 1rem;
+    margin: 0 2px;
+    transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    color: #ccc;
+    opacity: 0.5;
+}
+.mini-estrella.llena {
+    color: gold;
+    opacity: 1;
+    transform: translateY(-2px);
+}
+/* ARREGLO: Mini estrellas vacías también grises */
+.mini-estrella.vacia {
+    filter: grayscale(100%);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .atrapa-al-topo-container { width: 95%; padding: 15px; }
+    .tablero { width: 300px; height: 300px; gap: 10px; }
+    .nivel-btn { width: 50px; height: 50px; font-size: 1.1rem; }
+}
