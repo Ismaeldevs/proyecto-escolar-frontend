@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../style/JuegoDeMemoria.css";
+import "../Style/JuegoDeMemoria.css";
 
 const CONFIG_NIVELES = [
   { id: 1, nombre: "Nivel 1", parejas: 3 },

@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
-import "../style/abecedariodesordenado.css";
+import "../Style/abecedariodesordenado.css";
 
 const COLUMNAS = 7;
 const LETTER_ORDER = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ".split("");

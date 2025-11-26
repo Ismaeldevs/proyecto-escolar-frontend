@@ -1,6 +1,6 @@
 // src/componentes/RelacionaPlurales.jsx
 import { useEffect, useRef, useState } from "react";
-import "../Style/RelacionaPlurales.css";
+import "../Style/relacionaplurales.css";
 
 const NIVELES_CONFIG = [
   {

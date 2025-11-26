@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
-import "../style/juegos.css";
+import "../Style/Juegos.css";
 
 export default function Juegos() {
   const navigate = useNavigate();
