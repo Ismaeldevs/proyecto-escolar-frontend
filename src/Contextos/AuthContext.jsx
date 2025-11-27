@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
 
     const registrarMaestro = async (nombre, email, password) => {
         try {
-            const response = await fetch('http://localhost:4000/api/registro', {
+            const response = await fetch('http://localhost:3000/api/registro', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nombre, email, password })
@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
 
     const ingresarMaestro = async (email, password) => {
         try {
-            const response = await fetch('http://localhost:4000/api/login', {
+            const response = await fetch('http://localhost:3000/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
