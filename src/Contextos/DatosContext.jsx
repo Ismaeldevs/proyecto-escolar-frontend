@@ -3,6 +3,7 @@ import { generarCodigoSala } from '../Logica/utilidades';
 import { socket } from '../socket/socket'; 
 
 const DatosContext = createContext();
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 export const useDatos = () => useContext(DatosContext);
 
@@ -11,7 +12,7 @@ export const DatosProvider = ({ children }) => {
 
     const cargarDatosMaestro = useCallback(async (maestroId) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/datos-maestro/${maestroId}`);
+            const response = await fetch(`${API_URL}/api/datos-maestro/${maestroId}`);
             if (response.ok) {
                 const data = await response.json();
                 setSalas(data);
@@ -22,7 +23,7 @@ export const DatosProvider = ({ children }) => {
     const crearSala = async (teacherId, schoolName, grade) => {
         const codigo = generarCodigoSala();
         try {
-            const response = await fetch('http://localhost:3000/api/crear-sala', {
+            const response = await fetch(`${API_URL}/api/crear-sala`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ maestroId: teacherId, schoolName, grade, roomCode: codigo })
@@ -39,7 +40,7 @@ export const DatosProvider = ({ children }) => {
 
     const agregarTareaASala = async (salaId, datosTarea, tipo = 'tarea') => {
         try {
-            const response = await fetch('http://localhost:3000/api/crear-tarea', {
+            const response = await fetch(`${API_URL}/api/crear-tarea`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
@@ -62,7 +63,7 @@ export const DatosProvider = ({ children }) => {
 
     const editarTareaEnSala = async (salaId, tareaId, datosActualizados) => {
         try {
-            const response = await fetch('http://localhost:3000/api/actualizar-tarea', {
+            const response = await fetch(`${API_URL}/api/actualizar-tarea`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ tareaId, questions: datosActualizados.questions, timeLimit: datosActualizados.timeLimit, style: datosActualizados.style, submissionDeadline: datosActualizados.submissionDeadline })
@@ -75,7 +76,7 @@ export const DatosProvider = ({ children }) => {
 
     const eliminarTarea = async (tareaId, maestroId) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/eliminar-tarea/${tareaId}`, { method: 'DELETE' });
+            const response = await fetch(`${API_URL}/api/eliminar-tarea/${tareaId}`, { method: 'DELETE' });
             const data = await response.json();
             if (data.success) { await cargarDatosMaestro(maestroId); return { success: true }; }
             return { success: false };
@@ -84,7 +85,7 @@ export const DatosProvider = ({ children }) => {
 
     const eliminarSala = async (salaId, maestroId) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/eliminar-sala/${salaId}`, { method: 'DELETE' });
+            const response = await fetch(`${API_URL}/api/eliminar-sala/${salaId}`, { method: 'DELETE' });
             const data = await response.json();
             if (data.success) { await cargarDatosMaestro(maestroId); return { success: true }; }
             return { success: false };
@@ -93,7 +94,7 @@ export const DatosProvider = ({ children }) => {
 
     const agregarAlumnoLista = async (salaId, nombreCompleto) => {
         try {
-            const response = await fetch('http://localhost:3000/api/agregar-alumno-lista', {
+            const response = await fetch(`${API_URL}/api/agregar-alumno-lista`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ salaId, nombreCompleto })
@@ -108,21 +109,21 @@ export const DatosProvider = ({ children }) => {
 
     const obtenerListaAsistencia = async (salaId) => {
         try {
-            const res = await fetch(`http://localhost:3000/api/lista-asistencia/${salaId}`);
+            const res = await fetch(`${API_URL}/api/lista-asistencia/${salaId}`);
             return await res.json();
         } catch (e) { return []; }
     };
 
     const eliminarAlumnoDeLista = async (id) => {
         try {
-            await fetch(`http://localhost:3000/api/eliminar-alumno-lista/${id}`, { method: 'DELETE' });
+            await fetch(`${API_URL}/api/eliminar-alumno-lista/${id}`, { method: 'DELETE' });
             return { success: true };
         } catch (e) { return { success: false }; }
     };
 
     const buscarSalaEstudiante = async (codigoSala) => {
         try {
-            const response = await fetch('http://localhost:3000/api/estudiante/ingresar', {
+            const response = await fetch(`${API_URL}/api/estudiante/ingresar`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ codigoSala })
@@ -134,7 +135,7 @@ export const DatosProvider = ({ children }) => {
     const enviarRespuestasAlumno = async (salaId, tareaId, nombre, avatar, respuestas) => {
         const aciertos = respuestas.filter(r => r.isCorrect).length;
         try {
-            const response = await fetch('http://localhost:3000/api/estudiante/enviar', {
+            const response = await fetch(`${API_URL}/api/estudiante/enviar`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ tareaId, nombre, avatar, puntaje: aciertos, respuestas })
