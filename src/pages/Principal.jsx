@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { socket } from '../socket/socket'; 
+// import { socket } from '../socket/socket'; 
 import Header from '../componentes/Header';
 import Footer from '../componentes/Footer';
 import '../Style/Principal.css';
@@ -10,20 +10,20 @@ const Principal = () => {
 const [msg, setMsg] = useState("");
   const [logs, setLogs] = useState([]);
 
-  useEffect(() => {
-    socket.on("mensaje_servidor", (data) => {
-      setLogs((prev) => [...prev, data]);
-    });
+  // useEffect(() => {
+  //   socket.on("mensaje_servidor", (data) => {
+  //     setLogs((prev) => [...prev, data]);
+  //   });
 
-    return () => {
-      socket.off("mensaje_servidor");
-    };
-  }, []);
+  //   return () => {
+  //     socket.off("mensaje_servidor");
+  //   };
+  // }, []);
 
-  const enviar = () => {
-    socket.emit("mensaje_cliente", msg);
-    setMsg("");
-  };
+  // const enviar = () => {
+  //   socket.emit("mensaje_cliente", msg);
+  //   setMsg("");
+  // };
 
 
 
