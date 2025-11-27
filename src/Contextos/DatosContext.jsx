@@ -5,6 +5,9 @@ import { socket } from '../socket/socket';
 const DatosContext = createContext();
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
+console.log('DatosContext - VITE_API_URL:', import.meta.env.VITE_API_URL);
+console.log('DatosContext - API_URL final:', API_URL);
+
 export const useDatos = () => useContext(DatosContext);
 
 // Helper para emitir eventos de socket de forma segura
