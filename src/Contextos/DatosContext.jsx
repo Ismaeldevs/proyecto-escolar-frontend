@@ -7,6 +7,18 @@ const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 export const useDatos = () => useContext(DatosContext);
 
+// Helper para emitir eventos de socket de forma segura
+const emitirSocketEvento = (evento, datos) => {
+    try {
+        if (!socket.connected) {
+            socket.connect();
+        }
+        socket.emit(evento, datos);
+    } catch (error) {
+        console.warn('Socket event failed:', error);
+    }
+};
+
 export const DatosProvider = ({ children }) => {
     const [salas, setSalas] = useState([]);
 
@@ -31,7 +43,7 @@ export const DatosProvider = ({ children }) => {
             const data = await response.json();
             if (data.success) {
                 try { await cargarDatosMaestro(teacherId); } catch (e) {}
-                socket.emit('maestro:salaCreada', { maestroId: teacherId, salaId: data.salaId });
+                emitirSocketEvento('maestro:salaCreada', { maestroId: teacherId, salaId: data.salaId });
                 return { success: true, room: { roomCode: codigo } };
             }
             return { success: false, message: data.message };
@@ -54,7 +66,7 @@ export const DatosProvider = ({ children }) => {
             });
             const data = await response.json();
             if (data.success) {
-                socket.emit('maestro:tareaCreada', { salaId, tareaId: data.tareaId, tasks: data.tasks });
+                emitirSocketEvento('maestro:tareaCreada', { salaId, tareaId: data.tareaId, tasks: data.tasks });
                 return { success: true };
             }
         } catch {} 
@@ -101,7 +113,7 @@ export const DatosProvider = ({ children }) => {
             });
             const data = await response.json();
             if (data.success) {
-                socket.emit('maestro:alumnoAgregado', { salaId, nombreCompleto });
+                emitirSocketEvento('maestro:alumnoAgregado', { salaId, nombreCompleto });
             }
             return { success: true };
         } catch (e) { return { success: false }; }
@@ -142,7 +154,7 @@ export const DatosProvider = ({ children }) => {
             });
             const data = await response.json();
             if (data.success) {
-                socket.emit('estudiante:entregaTarea', { tareaId, nombreAlumno: nombre, puntaje: aciertos });
+                emitirSocketEvento('estudiante:entregaTarea', { tareaId, nombreAlumno: nombre, puntaje: aciertos });
             }
             return data;
         } catch (error) { return { success: false }; }
