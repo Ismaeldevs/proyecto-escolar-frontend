@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext, useCallback } from 'react';
 import { generarCodigoSala } from '../Logica/utilidades';
-import { socket } from '../socket/socket'; 
 
 const DatosContext = createContext();
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
@@ -8,8 +7,9 @@ const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 export const useDatos = () => useContext(DatosContext);
 
 // Helper para emitir eventos de socket de forma segura
-const emitirSocketEvento = (evento, datos) => {
+const emitirSocketEvento = async (evento, datos) => {
     try {
+        const { socket } = await import('../socket/socket');
         if (!socket.connected) {
             socket.connect();
         }
