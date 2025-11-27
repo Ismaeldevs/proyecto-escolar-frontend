@@ -55,7 +55,11 @@ import RompecabezasPage from './pages/RompecabezasPage.jsx'; // ← NUEVO
 import Recursos from './pages/Recursos.jsx';
 
 
-const App = () => (
+const App = () => {
+    console.log('App component rendering');
+    console.log('API_URL:', import.meta.env.VITE_API_URL);
+    
+    return (
     <AuthProvider>
         <DatosProvider>
             <BrowserRouter>
@@ -115,6 +119,7 @@ const App = () => (
             </BrowserRouter>
         </DatosProvider>
     </AuthProvider>
-);
+    );
+};
 
 export default App;

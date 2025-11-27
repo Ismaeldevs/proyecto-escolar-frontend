@@ -3,9 +3,12 @@ import { socket } from '../socket/socket';
 import './IndicadorConexion.css';
 
 const IndicadorConexion = () => {
-    const [conectado, setConectado] = useState(socket.connected);
+    const [conectado, setConectado] = useState(false);
 
     useEffect(() => {
+        // Verificar estado inicial de forma segura
+        setConectado(socket.connected || false);
+        
         const onConnect = () => setConectado(true);
         const onDisconnect = () => setConectado(false);
 
