@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // --- Contextos Globales ---
 import { AuthProvider } from './Contextos/AuthContext.jsx';
@@ -58,7 +58,7 @@ import Recursos from './pages/Recursos.jsx';
 const App = () => (
     <AuthProvider>
         <DatosProvider>
-            <HashRouter>
+            <BrowserRouter>
                 <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
                     <Routes>
 
@@ -112,7 +112,7 @@ const App = () => (
                         </Route>
                     </Routes>
                 </div>
-            </HashRouter>
+            </BrowserRouter>
         </DatosProvider>
     </AuthProvider>
 );
